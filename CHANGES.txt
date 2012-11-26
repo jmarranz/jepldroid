@@ -1,0 +1,7 @@
+
+ RELEASE CHANGES
+
+* 1.1 Release
+
+  First version based on JEPLayer v1.1
+

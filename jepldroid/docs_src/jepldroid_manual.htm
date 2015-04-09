@@ -1,0 +1,1841 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>ItsNat</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;}
+@font-face
+	{font-family:Monospaced;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:19.85pt;
+	text-align:justify;
+	text-indent:-19.85pt;
+	page-break-before:always;
+	font-size:14.0pt;
+	font-family:"Verdana","sans-serif";
+	color:#FF6600;
+	text-transform:uppercase;
+	font-weight:bold;}
+h2
+	{margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:18.0pt;
+	margin-left:42.55pt;
+	text-align:justify;
+	text-indent:-42.55pt;
+	font-size:12.0pt;
+	font-family:"Verdana","sans-serif";
+	color:#FF6600;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{mso-style-link:"Título 3 Car";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:48.2pt;
+	text-align:justify;
+	text-indent:-48.2pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:#808836;
+	font-weight:bold;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:2.0cm;
+	text-align:justify;
+	text-indent:-2.0cm;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:#808836;
+	font-weight:normal;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:50.4pt;
+	text-align:justify;
+	text-indent:-50.4pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:blue;
+	font-weight:normal;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:57.6pt;
+	text-align:justify;
+	text-indent:-57.6pt;
+	font-size:11.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;
+	font-weight:normal;
+	font-style:italic;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:64.8pt;
+	text-align:justify;
+	text-indent:-64.8pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:72.0pt;
+	text-align:justify;
+	text-indent:-72.0pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:79.2pt;
+	text-align:justify;
+	text-indent:-79.2pt;
+	font-size:9.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoIndex1, li.MsoIndex1, div.MsoIndex1
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:11.0pt;
+	text-align:justify;
+	text-indent:-11.0pt;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;}
+p.MsoIndex2, li.MsoIndex2, div.MsoIndex2
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-align:justify;
+	text-indent:-12.0pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoIndex3, li.MsoIndex3, div.MsoIndex3
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:36.0pt;
+	text-align:justify;
+	text-indent:-12.0pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoIndex4, li.MsoIndex4, div.MsoIndex4
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:48.0pt;
+	text-align:justify;
+	text-indent:-12.0pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoIndex5, li.MsoIndex5, div.MsoIndex5
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:60.0pt;
+	text-align:justify;
+	text-indent:-12.0pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoIndex6, li.MsoIndex6, div.MsoIndex6
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:72.0pt;
+	text-align:justify;
+	text-indent:-12.0pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoIndex7, li.MsoIndex7, div.MsoIndex7
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:84.0pt;
+	text-align:justify;
+	text-indent:-12.0pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoIndex8, li.MsoIndex8, div.MsoIndex8
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:96.0pt;
+	text-align:justify;
+	text-indent:-12.0pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoIndex9, li.MsoIndex9, div.MsoIndex9
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:108.0pt;
+	text-align:justify;
+	text-indent:-12.0pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	font-size:14.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	font-size:13.0pt;
+	font-family:"Times New Roman","serif";
+	font-variant:small-caps;
+	color:windowtext;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;
+	font-style:italic;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	line-height:12.0pt;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;
+	font-style:italic;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;
+	font-style:italic;}
+p.MsoIndexHeading, li.MsoIndexHeading, div.MsoIndexHeading
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;
+	font-weight:bold;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;
+	font-weight:bold;}
+p.MsoTof, li.MsoTof, div.MsoTof
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+span.MsoEndnoteReference
+	{vertical-align:super;}
+p.MsoEndnoteText, li.MsoEndnoteText, div.MsoEndnoteText
+	{mso-style-link:"Texto nota al final Car";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoToaHeading, li.MsoToaHeading, div.MsoToaHeading
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;
+	font-weight:bold;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:71.7pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-17.85pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;
+	letter-spacing:-.25pt;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:72.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;
+	letter-spacing:-.25pt;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:32.05pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-17.85pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:108.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;
+	letter-spacing:-.25pt;}
+p.MsoListBullet4, li.MsoListBullet4, div.MsoListBullet4
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:126.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;
+	letter-spacing:-.25pt;}
+p.MsoListBullet5, li.MsoListBullet5, div.MsoListBullet5
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:144.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;
+	letter-spacing:-.25pt;}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:89.85pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoListNumber3, li.MsoListNumber3, div.MsoListNumber3
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:108.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoListNumber4, li.MsoListNumber4, div.MsoListNumber4
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:126.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoListNumber5, li.MsoListNumber5, div.MsoListNumber5
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:144.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:22.0pt;
+	font-family:"Arial","sans-serif";
+	color:#FF6600;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;
+	font-weight:bold;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{mso-style-name:"Sangría de texto normal\,Sangría de t\. independiente";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:14.15pt;
+	text-align:justify;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;}
+p.MsoListContinue2, li.MsoListContinue2, div.MsoListContinue2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:1.0cm;
+	text-align:justify;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;}
+p.MsoListContinue3, li.MsoListContinue3, div.MsoListContinue3
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:42.45pt;
+	text-align:justify;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;}
+p.MsoListContinue4, li.MsoListContinue4, div.MsoListContinue4
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:56.6pt;
+	text-align:justify;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;}
+p.MsoListContinue5, li.MsoListContinue5, div.MsoListContinue5
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:70.75pt;
+	text-align:justify;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;}
+p.MsoNoteHeading, li.MsoNoteHeading, div.MsoNoteHeading
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;
+	font-weight:bold;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:150%;
+	font-size:24.0pt;
+	font-family:"Verdana","sans-serif";
+	color:blue;
+	font-weight:bold;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-indent:35.4pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:27.35pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	background:navy;
+	font-size:10.0pt;
+	font-family:"Tahoma","sans-serif";
+	color:windowtext;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:"Arial Unicode MS","serif";
+	color:black;}
+code
+	{font-family:"Arial Unicode MS","serif";}
+pre
+	{mso-style-link:"HTML con formato previo Car";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial Unicode MS","serif";
+	color:black;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Texto de globo Car";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	color:windowtext;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:36.0pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:36.0pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.Reference, li.Reference, div.Reference
+	{mso-style-name:Reference;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:32.4pt;
+	text-align:justify;
+	text-indent:-18.2pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+p.TitleofFigure, li.TitleofFigure, div.TitleofFigure
+	{mso-style-name:"Title of Figure";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:center;
+	text-indent:0cm;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.TitleofTable, li.TitleofTable, div.TitleofTable
+	{mso-style-name:"Title of Table";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	text-align:center;
+	text-indent:0cm;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:windowtext;}
+p.ListNumberlevel1, li.ListNumberlevel1, div.ListNumberlevel1
+	{mso-style-name:"List Number level 1";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:31.2pt;
+	text-align:justify;
+	text-indent:-9.95pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:windowtext;}
+span.a201
+	{mso-style-name:a201;
+	font-family:"Arial","sans-serif";}
+span.magazinehdg1
+	{mso-style-name:magazinehdg1;
+	font-family:"Verdana","sans-serif";
+	color:#333333;
+	font-weight:bold;}
+span.artcopy1
+	{mso-style-name:artcopy1;
+	font-family:"Trebuchet MS","sans-serif";
+	color:#333333;
+	text-decoration:none none;}
+p.byline, li.byline, div.byline
+	{mso-style-name:byline;
+	margin-right:15.0pt;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3A4959;
+	font-weight:bold;
+	font-style:italic;}
+span.bold
+	{mso-style-name:bold;}
+span.contenttitle1
+	{mso-style-name:contenttitle1;
+	font-family:"Verdana","sans-serif";
+	color:#002597;
+	font-weight:bold;}
+p.headline, li.headline, div.headline
+	{mso-style-name:headline;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Arial Unicode MS","serif";
+	color:windowtext;}
+span.title
+	{mso-style-name:title;}
+p.CdigoFuenteCar, li.CdigoFuenteCar, div.CdigoFuenteCar
+	{mso-style-name:"Código Fuente Car";
+	mso-style-link:"Código Fuente Car Car";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:17.0pt;
+	font-size:11.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+p.CdigoFuenteCarCxSpFirst, li.CdigoFuenteCarCxSpFirst, div.CdigoFuenteCarCxSpFirst
+	{mso-style-name:"Código Fuente CarCxSpFirst";
+	mso-style-link:"Código Fuente Car Car";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:17.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+p.CdigoFuenteCarCxSpMiddle, li.CdigoFuenteCarCxSpMiddle, div.CdigoFuenteCarCxSpMiddle
+	{mso-style-name:"Código Fuente CarCxSpMiddle";
+	mso-style-link:"Código Fuente Car Car";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:17.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+p.CdigoFuenteCarCxSpLast, li.CdigoFuenteCarCxSpLast, div.CdigoFuenteCarCxSpLast
+	{mso-style-name:"Código Fuente CarCxSpLast";
+	mso-style-link:"Código Fuente Car Car";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:17.0pt;
+	font-size:11.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+p.EstiloCdigoFuenteIzquierda125cm, li.EstiloCdigoFuenteIzquierda125cm, div.EstiloCdigoFuenteIzquierda125cm
+	{mso-style-name:"Estilo Código Fuente + Izquierda\:  125 cm";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:35.45pt;
+	font-size:11.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+p.EstiloCdigoFuenteIzquierda125cmCxSpFirst, li.EstiloCdigoFuenteIzquierda125cmCxSpFirst, div.EstiloCdigoFuenteIzquierda125cmCxSpFirst
+	{mso-style-name:"Estilo Código Fuente + Izquierda\:  125 cmCxSpFirst";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:35.45pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+p.EstiloCdigoFuenteIzquierda125cmCxSpMiddle, li.EstiloCdigoFuenteIzquierda125cmCxSpMiddle, div.EstiloCdigoFuenteIzquierda125cmCxSpMiddle
+	{mso-style-name:"Estilo Código Fuente + Izquierda\:  125 cmCxSpMiddle";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:35.45pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+p.EstiloCdigoFuenteIzquierda125cmCxSpLast, li.EstiloCdigoFuenteIzquierda125cmCxSpLast, div.EstiloCdigoFuenteIzquierda125cmCxSpLast
+	{mso-style-name:"Estilo Código Fuente + Izquierda\:  125 cmCxSpLast";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:35.45pt;
+	font-size:11.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+p.EstiloIzquierdaAntes0ptoDespus0pto, li.EstiloIzquierdaAntes0ptoDespus0pto, div.EstiloIzquierdaAntes0ptoDespus0pto
+	{mso-style-name:"Estilo Izquierda Antes\:  0 pto Después\:  0 pto";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:windowtext;}
+p.NormalCourierNew, li.NormalCourierNew, div.NormalCourierNew
+	{mso-style-name:"Normal + Courier New";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+span.CdigoFuenteCarCar
+	{mso-style-name:"Código Fuente Car Car";
+	mso-style-link:"Código Fuente Car";
+	font-family:"Courier New";}
+p.httponlaeterraes, li.httponlaeterraes, div.httponlaeterraes
+	{mso-style-name:"http\:\/\/onlae\.terra\.es\/";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+p.Microsoftsdocumentation, li.Microsoftsdocumentation, div.Microsoftsdocumentation
+	{mso-style-name:"Microsoft’s documentation";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:windowtext;}
+span.java-layer-method1
+	{mso-style-name:java-layer-method1;
+	font-family:"Monospaced","serif";
+	font-weight:bold;}
+span.java-keywords1
+	{mso-style-name:java-keywords1;
+	font-family:"Monospaced","serif";
+	color:#000099;
+	font-weight:bold;}
+span.java-numeric-literals1
+	{mso-style-name:java-numeric-literals1;
+	color:#780000;}
+span.java-string-literal1
+	{mso-style-name:java-string-literal1;
+	color:#99006B;}
+span.java-block-comment1
+	{mso-style-name:java-block-comment1;
+	color:#737373;}
+span.xml-pi-start1
+	{mso-style-name:xml-pi-start1;
+	font-family:"Monospaced","serif";
+	color:#00007C;
+	font-weight:bold;}
+span.xml-pi-content1
+	{mso-style-name:xml-pi-content1;
+	color:#00007C;}
+span.xml-comment1
+	{mso-style-name:xml-comment1;
+	color:#006666;}
+span.xml-tag1
+	{mso-style-name:xml-tag1;
+	color:blue;}
+span.xml-attribute1
+	{mso-style-name:xml-attribute1;
+	color:#007C00;}
+span.xml-value1
+	{mso-style-name:xml-value1;
+	color:#99006B;}
+span.java-errors1
+	{mso-style-name:java-errors1;
+	background:#FFAFAF;}
+span.style21
+	{mso-style-name:style21;
+	color:#A0A0A0;}
+span.style51
+	{mso-style-name:style51;
+	color:#0000A0;
+	font-weight:bold;}
+span.style11
+	{mso-style-name:style11;}
+span.style101
+	{mso-style-name:style101;
+	color:red;}
+span.style41
+	{mso-style-name:style41;
+	color:#F000F0;}
+span.style91
+	{mso-style-name:style91;
+	color:#00A000;}
+span.body
+	{mso-style-name:body;}
+span.style61
+	{mso-style-name:style61;
+	color:blue;}
+span.style121
+	{mso-style-name:style121;
+	color:blue;}
+span.xml-error1
+	{mso-style-name:xml-error1;
+	background:#FFAFAF;}
+span.xml-cdata-section1
+	{mso-style-name:xml-cdata-section1;
+	color:#7C6200;}
+span.html-tag1
+	{mso-style-name:html-tag1;
+	color:blue;}
+span.html-operator1
+	{mso-style-name:html-operator1;
+	color:#007C00;}
+span.html-value1
+	{mso-style-name:html-value1;
+	color:#99006B;}
+span.html-sgml-comment1
+	{mso-style-name:html-sgml-comment1;
+	color:gray;}
+span.html-sgml-declaration1
+	{mso-style-name:html-sgml-declaration1;
+	color:#BF9221;}
+span.jsp-html-tag1
+	{mso-style-name:jsp-html-tag1;
+	color:blue;}
+span.jsp-html-argument1
+	{mso-style-name:jsp-html-argument1;
+	color:#007C00;}
+span.jsp-xml-value1
+	{mso-style-name:jsp-xml-value1;
+	color:#99006B;}
+span.java-annotation1
+	{mso-style-name:java-annotation1;
+	color:#006F00;}
+span.html-character1
+	{mso-style-name:html-character1;
+	color:#B20000;}
+span.ts
+	{mso-style-name:ts;}
+span.sts
+	{mso-style-name:sts;}
+p.NormalMonospaced, li.NormalMonospaced, div.NormalMonospaced
+	{mso-style-name:"Normal + Monospaced\,Negrita\,Negro";
+	mso-style-link:"Normal + Monospaced Car\,Negrita Car\,Negro Car";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:black;}
+span.NormalMonospacedCar
+	{mso-style-name:"Normal + Monospaced Car\,Negrita Car\,Negro Car";
+	mso-style-link:"Normal + Monospaced\,Negrita\,Negro";
+	font-family:"Courier New";
+	color:black;}
+span.literal1
+	{mso-style-name:literal1;
+	color:#0000E6;}
+span.character1
+	{mso-style-name:character1;
+	color:#CE7B00;}
+span.tag1
+	{mso-style-name:tag1;
+	color:#0000E6;}
+span.argument1
+	{mso-style-name:argument1;
+	color:#009900;}
+span.value1
+	{mso-style-name:value1;
+	color:#CE7B00;}
+span.comment1
+	{mso-style-name:comment1;
+	color:#969696;}
+span.st01
+	{mso-style-name:st01;
+	font-family:"Monospaced","serif";
+	color:#CE7B00;
+	font-weight:bold;}
+span.keyword-directive1
+	{mso-style-name:keyword-directive1;
+	color:#0000E6;}
+span.sgml-declaration1
+	{mso-style-name:sgml-declaration1;
+	color:#628FB5;}
+span.TextonotaalfinalCar
+	{mso-style-name:"Texto nota al final Car";
+	mso-style-link:"Texto nota al final";
+	font-family:"Verdana","sans-serif";}
+span.HTMLconformatoprevioCar
+	{mso-style-name:"HTML con formato previo Car";
+	mso-style-link:"HTML con formato previo";
+	font-family:"Arial Unicode MS","serif";
+	color:black;}
+span.st11
+	{mso-style-name:st11;
+	color:#0000E6;}
+span.st21
+	{mso-style-name:st21;
+	color:#009900;}
+span.st31
+	{mso-style-name:st31;
+	color:#CE7B00;}
+span.st41
+	{mso-style-name:st41;
+	color:#969696;}
+span.st51
+	{mso-style-name:st51;
+	font-family:"Monospaced","serif";
+	color:#CE7B00;
+	font-weight:bold;}
+span.comment
+	{mso-style-name:comment;}
+span.start-tag
+	{mso-style-name:start-tag;}
+span.attribute-name
+	{mso-style-name:attribute-name;}
+span.attribute-value
+	{mso-style-name:attribute-value;}
+span.end-tag
+	{mso-style-name:end-tag;}
+span.TextodegloboCar
+	{mso-style-name:"Texto de globo Car";
+	mso-style-link:"Texto de globo";
+	font-family:"Tahoma","sans-serif";}
+span.Ttulo3Car
+	{mso-style-name:"Título 3 Car";
+	mso-style-link:"Título 3";
+	font-family:"Verdana","sans-serif";
+	color:#808836;
+	font-weight:bold;}
+p.character, li.character, div.character
+	{mso-style-name:character;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#CE7B00;}
+p.keyword-directive, li.keyword-directive, div.keyword-directive
+	{mso-style-name:keyword-directive;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#0000E6;}
+.MsoChpDefault
+	{font-size:10.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:21.0cm 842.0pt;
+	margin:21.3pt 2.0cm 78.0pt 2.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ES link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US>         
+<span style='color:blue'>                                                                                  </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US>   </span></p>
+
+<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+text-align:center'><b><span lang=EN-US style='font-size:22.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:150%'><b><span
+lang=EN-US style='font-size:34.0pt;line-height:150%;color:#FF6600'>JEPLDroid </span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:150%'><b><span
+lang=EN-US style='font-size:34.0pt;line-height:150%;color:#FF6600'>(JEPLayer
+for Android)</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:150%'><b><span
+lang=EN-US style='font-size:32.0pt;line-height:150%;color:#FF6600'>Reference Manual</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:150%'><b><span
+style='font-size:30.0pt;line-height:150%;color:#FF6600'>v1.2</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:150%'><b><span
+style='font-size:18.0pt;line-height:150%'>Doc. version 1.0</span></b></p>
+
+<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+text-align:center'><b><span style='font-size:14.0pt'>Apr. 9, 2015</span></b></p>
+
+<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+text-align:center'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+text-align:center'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+text-align:center'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+text-align:center'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+text-align:center'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+text-align:center'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+text-align:center'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+text-align:center'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=left style='margin:0cm;margin-bottom:.0001pt;
+text-align:left'><b><span style='font-size:14.0pt'>© Jose María Arranz
+Santamaría </span></b><span style='color:blue'><br clear=all style='page-break-before:
+always'>
+</span></p>
+
+<p class=MsoTitle><a name="_Toc462226985"></a><a name="_Toc413219483"></a><a
+name="_Toc403905495"></a><a name="_Toc389654290"><span lang=EN-US>Table of
+contents</span></a></p>
+
+<p class=MsoToc1><span
+lang=EN-GB><a href="#_Toc338964558"><span lang=EN-US>1. INTRODUCTION</span><span
+style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964559">1.1<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>WHAT IS JEPLDROID (OR
+JEPLAYER FOR ANDROID)<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964560">1.2<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>WHY JEPLAYER AND BY
+EXTENSION JDBC IN ANDROID<span style='color:windowtext;display:none;text-decoration:
+none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc1><span lang=EN-GB><a href="#_Toc338964561">2. CONSIDERATIONS<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964562">2.1<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>DOCUMENT SCOPE<span
+style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964563">2.2<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>DOCUMENT CONVENTIONS<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964564">2.3<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>LICENSE<span
+style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964565">2.4<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>COPYRIGHTS<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964566">2.5<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>REQUIRED DEVELOPER
+TECHNICAL SKILLS<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc1><span lang=EN-GB><a href="#_Toc338964567">3. REQUIREMENTS AND
+INSTALLATION<span style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964568">3.1<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>TECHNICAL REQUIREMENTS,
+LIMITATIONS AND DEPENDENCIES<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964569">3.2<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>JEPLDROID DISTRIBUTION<span
+style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></span></p>
+
+<p class=MsoToc3><span lang=EN-GB><a href="#_Toc338964570"><span lang=EN-US>3.2.1</span><span
+lang=ES style='font-family:"Calibri","sans-serif";color:windowtext;font-style:
+normal;text-decoration:none'>       </span><span lang=EN-US>Binaries version</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></span></p>
+
+<p class=MsoToc3><span lang=EN-GB><a href="#_Toc338964571"><span lang=EN-US>3.2.2</span><span
+lang=ES style='font-family:"Calibri","sans-serif";color:windowtext;font-style:
+normal;text-decoration:none'>       </span><span lang=EN-US>Development version</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964572">3.3<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>PROVIDE A DATASOURCE FOR
+SQLITE<span style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></span></p>
+
+<p class=MsoToc1><span lang=EN-GB><a href="#_Toc338964573">4. LIMITATIONS AND
+IMPROVEMENTS OF JEPLDROID USING SQLDROID/SQLITE<span style='color:windowtext;
+display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964574">4.1<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>LIMITATIONS<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
+
+<p class=MsoToc3><span lang=EN-GB><a href="#_Toc338964575">4.1.1<span lang=ES
+style='font-family:"Calibri","sans-serif";color:windowtext;font-style:normal;
+text-decoration:none'>       </span>Affected rows are ever zero<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
+
+<p class=MsoToc3><span lang=EN-GB><a href="#_Toc338964576">4.1.2<span lang=ES
+style='font-family:"Calibri","sans-serif";color:windowtext;font-style:normal;
+text-decoration:none'>       </span>The method <span style='font-family:"Courier New"'>getGeneratedKey</span>
+is not a single SQL sentence<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
+
+<p class=MsoToc2><span lang=EN-GB style='font-variant:normal !important;
+text-transform:uppercase'><a href="#_Toc338964577">4.2<span lang=ES
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-transform:none;text-decoration:none'>      </span>IMPROVEMENTS<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
+
+<p class=MsoToc3><span lang=EN-GB><a href="#_Toc338964578">4.2.1<span lang=ES
+style='font-family:"Calibri","sans-serif";color:windowtext;font-style:normal;
+text-decoration:none'>       </span>Do not care about the type of parameters<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
+
+<p class=MsoToc3><span lang=EN-GB><a href="#_Toc338964579">4.2.2<span lang=ES
+style='font-family:"Calibri","sans-serif";color:windowtext;font-style:normal;
+text-decoration:none'>       </span><span style='font-family:"Courier New"'>getGeneratedKey</span>
+works as usual<span style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><a name="_Toc131510129"><span lang=EN-US>&nbsp;</span></a></p>
+
+<h1><a name="_Toc338964558"><span lang=EN-US>1. </span><span lang=EN-US>INTRODUCTION</span></a></h1>
+
+<h2><a name="_Toc131510130"></a><a name="_Toc338964559"><span lang=EN-GB>1.1 <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB>WHAT IS JEPLDROID (OR JEPLAYER FOR ANDROID)</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>JEPLDroid is the port of JEPLayer</span><a
+href="#_ftn1" name="_ftnref1" title=""><span class=MsoFootnoteReference><span
+lang=EN-GB><span class=MsoFootnoteReference><span lang=EN-GB style='font-size:
+10.0pt;font-family:"Verdana","sans-serif"'>[1]</span></span></span></span></a><span
+lang=EN-GB> to Android environment, basically is a feature reduced version of
+JEPLayer removing stuff not compatible or hard to port to Android environment
+like JTA APIs. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>In simple words: JEPLDroid = JEPLayer – JTA</span></p>
+
+<p class=MsoNormal><span lang=EN-US>APIs related to JTA have been removed, if
+your JEPLayer based code is not using JTA porting to JEPLDroid is
+straightforward.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Furthermore, because JEPLDroid is a subset of
+JEPLayer sharing identical source code, version numbers are the same.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The main objective of JEPLDroid is to
+leverage JDBC in Android environment, it has two uses:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-GB>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB>JEPLDroid is JDBC driver agnostic: if your JDBC driver works in
+Android, JEPLDroid can work the same as JEPLayer in Android environment.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-GB>2)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB>JEPLDroid used to leverage the JDBC API provided by SQLDroid</span><a
+href="#_ftn2" name="_ftnref2" title=""><span class=MsoFootnoteReference><span
+lang=EN-GB><span class=MsoFootnoteReference><span lang=EN-GB style='font-size:
+10.0pt;font-family:"Verdana","sans-serif"'>[2]</span></span></span></span></a><span
+lang=EN-GB> the famous JDBC driver for the built-in SQLite database engine
+included in any Android based device.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>You easily realize the second option is the
+most interesting and useful use because rarely you are going to directly
+connect an Android device to a remote database and most of Android applications
+need some kind of local persistence and built-in SQLite is very common for this
+task.</span></p>
+
+<h2><a name="_Toc338964560"><span lang=EN-GB>1.2 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>WHY JEPLAYER AND BY EXTENSION JDBC IN ANDROID</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>JDBC with no doubt is mainstream and is the
+basic and low level piece for RDBMS persistence in Java. “Every” Java developer
+knows the most common JDBC methods in spite of high level ORMs usually hide the
+underlying JDBC calls. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>In spite of JDBC is the low level layer for
+persistence it has become a bit complex and big, this complexity and size is
+not a problem in desktop and server programming but it can be overwhelming in power
+and memory limited devices like Android phones and tablets and database engines
+like SQLite. This is why SQLite API<a href="#_ftn3" name="_ftnref3" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span lang=EN-US
+style='font-size:10.0pt;font-family:"Verdana","sans-serif"'>[3]</span></span></span></a>
+in Android is specific, small and pragmatic<a href="#_ftn4" name="_ftnref4"
+title=""><span class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:10.0pt;font-family:"Verdana","sans-serif"'>[4]</span></span></span></a>.
+</span></p>
+
+<p class=MsoNormal><span lang=EN-US>In spite of Android was born for very
+limited devices, today this is not longer true, current phones have processors
+with more than 1 core, speeds higher than 1 GHz and memory climbing to GB levels,
+these days complete or semi-complete built-in support of JDBC for SQLite would
+not be a problem.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Anyway SQLDroid offers a basic and
+pragmatic JDBC support of SQLite based on the public Android Java API
+(SQLiteDataBase), and SQLDroid implementation shows how much Android SQLite API
+is not very different to JDBC (for instance </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>Cursor</span></span><span
+lang=EN-US> regarding to </span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>ResultSet</span></span><span lang=EN-US>). </span></p>
+
+<p class=MsoNormal><span lang=EN-US>JEPLDroid automatically detects when
+SQLDroid JDBC driver is being used and makes the best to make JEPLayer workable
+in this very limited environment, furthermore JEPLDroid leverage SQLDroid
+providing indirect absolute positioning extremely important to request data in
+pages of big tables.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>JEPLayer removes most of tedious tasks
+typical of database programming, like transaction demarcation and connection
+management.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h1><a name="_Toc338964561"><span lang=EN-GB>2. </span><span lang=EN-GB>CONSIDERATIONS</span></a></h1>
+
+<h2><a name="_Toc338964562"><span lang=EN-GB>2.1 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>DOCUMENT SCOPE</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>This manual only explains the specifics of
+JEPLDroid, the JEPLayer port of Android. For a complete documentation of
+JEPLayer, download JEPLayer distribution<a href="#_ftn5" name="_ftnref5"
+title=""><span class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:10.0pt;font-family:"Verdana","sans-serif"'>[5]</span></span></span></a>
+which includes extensive documentation.</span></p>
+
+<h2><a name="_Toc338964563"><span lang=EN-GB>2.2 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>DOCUMENT CONVENTIONS</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>A Verdana font is used to describe.</span></p>
+
+<p class=CdigoFuenteCar style='margin-left:0cm'><span lang=EN-US>A Courier New
+font is used for Java source code.</span></p>
+
+<h2><a name="_Toc338964564"><span lang=EN-GB>2.3 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>LICENSE</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>JEPLDroid is open source and Apache License
+Version 2 licensed<a href="#_ftn6" name="_ftnref6" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span lang=EN-US
+style='font-size:10.0pt;font-family:"Verdana","sans-serif"'>[6]</span></span></span></a>.</span></p>
+
+<h2><a name="_Toc338964565"><span lang=EN-GB>2.4 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>COPYRIGHTS</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>Jose María Arranz Santamaría is the author and
+intellectual property owner of JEPLDroid source code, documentation and
+examples. </span></p>
+
+<h2><a name="_Toc338964566"><span lang=EN-GB>2.5 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>REQUIRED DEVELOPER TECHNICAL SKILLS</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>Java 1.6, JDBC and JEPLayer knowledge are
+required.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h1><a name="_Toc338964567"><span lang=EN-GB>3. </span><span lang=EN-GB>REQUIREMENTS
+AND INSTALLATION</span></a></h1>
+
+<h2><a name="_Toc338964568"><span lang=EN-GB>3.1 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>TECHNICAL REQUIREMENTS, LIMITATIONS AND
+DEPENDENCIES</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>JEPLDroid has been compiled and tested on AndroidStudio
+v1.1, Oracle’s Java Standard Edition (Java SE) SDK 1.7 and the Android SDK
+provided by Google. Source and binaries configuration is set to 1.6.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>JEPLDroid is provided as an AAR (.aar) file
+ready to be included in your </span><span class=CdigoFuenteCarCar><span
+lang=EN-GB style='font-size:11.0pt'>libs</span></span><span lang=EN-US> folder,
+however JEPLDroid source code compiles in an Android application with </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>minSdkVersion=”15”</span></span><span
+lang=EN-US>.</span></p>
+
+<h2><a name="_Toc338964569"><span lang=EN-GB>3.2 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>JEPLDROID DISTRIBUTION</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>JEPLDroid is distributed on three forms:</span></p>
+
+<h3><span lang=EN-US>3.2.1 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Binaries and manual</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Courier New"'>JEPLDroid_dist_X.zip</span><span
+lang=EN-US> contains the required binaries to include in Android applications
+using JEPLDroid, where X is the version.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Decompress this distribution ZIP file. The
+content of this file is two folders:</span></p>
+
+<p class=MsoNormal><span lang=EN-US>docs/ =&gt; Contains this manual and
+javadoc archives</span></p>
+
+<p class=MsoNormal><span lang=EN-US>lib/   =&gt; Contains the </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>jepldroid-version.aar</span></span><span
+lang=EN-GB> </span><span lang=EN-US>with the compiled Java classes. Just add
+this file to your </span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>libs</span></span><span lang=EN-US> folder of your
+Android application.</span></p>
+
+<h3><span lang=EN-US>3.2.2 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>JCenter and Maven Central</span></h3>
+
+<p class=MsoNormal><span lang=EN-US>Gradle:</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Courier New"'>dependencies
+{</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Courier New"'>    ...</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Courier New"'>   
+compile 'org.innowhere:jepldroid:(version)'</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Courier New"'>}</span></p>
+
+<h3><a name="_Toc338964571"><span lang=EN-US>3.2.3 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Source code</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>Development is done in GitHub. Releases are
+marked with a tag.</span></p>
+
+<h2><a name="_Toc338964572"><span lang=EN-GB>3.3 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>PROVIDE A DATASOURCE FOR SQLITE</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>JEPLayer needs a </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>DataSource</span></span><span
+lang=EN-GB> to access to your database, this also applies to JEPLDroid and
+SQLite. In Android a </span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>DataSource</span></span><span lang=EN-GB> is not
+really important because the typical Android application just need one
+connection (</span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>DataSource</span></span><span lang=EN-GB> is typically
+used as a </span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>Connection</span></span><span lang=EN-GB> pool). This
+is why SQLDroid just provide a conventional JDBC driver but not a </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>DataSource</span></span><span
+lang=EN-GB>, do not worry JEPLDroid source distribution provides a simple </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>DataSource</span></span><span
+lang=EN-GB> with name </span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>example.loadmanually.SimpleDataSource</span></span><span
+lang=EN-GB> located in </span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>test</span></span><span lang=EN-GB> folder, this class
+also needs the class </span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>SimpleConnectionWrapper</span></span><span lang=EN-GB>
+in the same package.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The following code creates a SQLite </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>DataSource</span></span><span
+lang=EN-US> for built-in SQLite based on SQLDroid JDBC driver valid for an
+Android application with package id </span><span class=CdigoFuenteCarCar><span
+lang=EN-GB style='font-size:11.0pt'>com.innowhere.jepldroidtest</span></span><span
+lang=EN-US> (you can obtain this package programmatically)<a href="#_ftn7"
+name="_ftnref7" title=""><span class=MsoFootnoteReference><span
+class=MsoFootnoteReference><span lang=EN-US style='font-size:10.0pt;font-family:
+"Verdana","sans-serif"'>[7]</span></span></span></a>:</span></p>
+
+<p class=CdigoFuenteCarCxSpFirst style='margin-left:0cm'><span lang=EN-US> String
+jdbcDriver = <span style='color:#CE7B00'>&quot;org.sqldroid.SQLDroidDriver&quot;</span>;</span></p>
+
+<p class=CdigoFuenteCarCxSpMiddle style='margin-left:0cm'><span lang=EN-US> String
+url = </span></p>
+
+<p class=CdigoFuenteCarCxSpMiddle style='margin-left:0cm'><span lang=EN-US
+style='color:#CE7B00'>          &quot;jdbc:sqlite://data/data/com.innowhere.jepldroidtest/test.db&quot;</span><span
+lang=EN-US>;</span></p>
+
+<p class=CdigoFuenteCarCxSpMiddle style='margin-left:0cm'><span lang=EN-US> String
+userName = <span style='color:#CE7B00'>&quot;myLogin&quot;</span>;</span></p>
+
+<p class=CdigoFuenteCarCxSpMiddle style='margin-left:0cm'><span lang=EN-US>  String
+password = <span style='color:#CE7B00'>&quot;myPW&quot;</span>;        </span></p>
+
+<p class=CdigoFuenteCarCxSpMiddle style='margin-left:0cm'><span lang=EN-US
+style='color:#0000E6'> int</span><span lang=EN-US> poolSize = 1;</span></p>
+
+<p class=CdigoFuenteCarCxSpMiddle><span lang=EN-US>        </span></p>
+
+<p class=CdigoFuenteCarCxSpMiddle style='margin-left:0cm'><span lang=EN-US> DataSource
+ds = </span></p>
+
+<p class=CdigoFuenteCarCxSpLast style='margin-left:0cm'><span lang=EN-US>     new
+SimpleDataSource(jdbcDriver,url,userName,password,poolSize);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>JEPLDroid automatically detects when you
+are using the JDBC SQLDroid driver and perform some quirks to effectively run
+in JEPLDroid, in fact as explained latter JEPLDroid slightly improves SQLDroid
+under the hood.</span></p>
+
+<h1><a name="_Toc338964573"><span lang=EN-GB>4. </span><span lang=EN-GB>LIMITATIONS
+AND IMPROVEMENTS OF JEPLDROID USING SQLDROID/SQLITE</span></a></h1>
+
+<h2><a name="_Toc338964574"><span lang=EN-GB>4.1 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>LIMITATIONS</span></a></h2>
+
+<h3><a name="_Toc338964575"><span lang=EN-GB>4.1.1 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Affected rows are ever zero</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>The method </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>JEPLDALQuery.executeUpdate()</span></span><span
+lang=EN-US> ever returns zero, this limitation is imposed by SQLite Java API,
+there is no return of affected rows when executing persistent actions. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>There are some JEPLayer methods related
+with the result of </span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>JEPLDALQuery.executeUpdate() </span></span><span
+lang=EN-US>like </span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>JEPLDALQuery.setStrictMinRows(int) </span></span><span
+lang=EN-GB>and</span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'> JEPLDALQuery.setStrictMaxRows(int) </span></span><span
+lang=EN-GB>these restrictions are ignored when SQLDroid JDBC driver is
+detected. </span></p>
+
+<h3><a name="_Toc338964576"><span lang=EN-GB>4.1.2 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The method </span></a><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>getGeneratedKey</span></span><span
+lang=EN-GB> is not a single SQL sentence</span></h3>
+
+<p class=MsoNormal><span lang=EN-GB>This is a limitation of SQLite in any
+platform, SQLite JDBC drivers do not support </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>PreparedStatement</span></span><span
+lang=EN-GB> objects created passing the parameter </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>Statement.RETURN_GENERATED_KEYS</span></span><span
+lang=EN-GB>. The typical solution is executing the sentence </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>SELECT
+LAST_INSERT_ROWID()</span></span><span lang=EN-GB> immediately after the </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>INSERT</span></span><span
+lang=EN-GB> operation. This is how </span><span class=CdigoFuenteCarCar><span
+lang=EN-GB style='font-size:11.0pt'>JEPLDALQuery.getGeneratedKey(Class&lt;U&gt;)</span></span><span
+lang=EN-GB> is implemented under the hood.</span></p>
+
+<h2><a name="_Toc338964577"><span lang=EN-GB>4.2 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>IMPROVEMENTS</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>Because JEPLDroid is a layer on top of JDBC
+it can provide some improvements over SQLDroid:</span></p>
+
+<h3><a name="_Toc338964578"><span lang=EN-GB>4.2.1 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Do not care about the type of parameters</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>SQLDroid does not implement </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>PreparedStatement.setObject(int
+column,Object param)</span></span><span lang=EN-GB> this is not a problem for
+calling methods like </span><span class=CdigoFuenteCarCar><span lang=EN-GB
+style='font-size:11.0pt'>JEPLDALQuery.addParameters(Object...)</span></span></p>
+
+<h3><a name="_Toc338964579"><span lang=EN-GB>4.2.2 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:
+11.0pt'>getGeneratedKey</span></span><span lang=EN-GB> works as usual</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>As explained before </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>JEPLDALQuery.getGeneratedKey(Class&lt;U&gt;)
+</span></span><span lang=EN-GB>is a replacement of the non-implemented</span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'> PreparedStatement.getGeneratedKeys().</span></span></p>
+
+<h3><span lang=EN-GB>4.2.3 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Use of the SQLite absolute positioning</span></h3>
+
+<p class=MsoNormal><span lang=EN-GB>SQLDroid does not support </span><span
+class=CdigoFuenteCarCar><span lang=EN-GB style='font-size:11.0pt'>ResultSet.absolute(int)</span></span><span
+lang=EN-GB>, this method is absolutely necessary for effective pagination of results
+in tables and SQL sentences with many rows. JEPLDroid automatically uses
+absolute positioning of SQLite.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>By this way Java sentences like these</span></p>
+
+<p class=MsoNormal align=left style='margin:0cm;margin-bottom:.0001pt;
+text-align:left;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black'>    </span><b><span lang=EN-US style='font-family:"Courier New";
+color:#7F0055'>public</span></b><span lang=EN-US style='font-family:"Courier New";
+color:black'> List&lt;Contact&gt; selectJEPLDAOQueryRange(</span><b><span
+lang=EN-US style='font-family:"Courier New";color:#7F0055'>int</span></b><span
+lang=EN-US style='font-family:"Courier New";color:black'> from,</span><b><span
+lang=EN-US style='font-family:"Courier New";color:#7F0055'>int</span></b><span
+lang=EN-US style='font-family:"Courier New";color:black'> to)</span></p>
+
+<p class=MsoNormal align=left style='margin:0cm;margin-bottom:.0001pt;
+text-align:left;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black'>    {</span></p>
+
+<p class=MsoNormal align=left style='margin:0cm;margin-bottom:.0001pt;
+text-align:left;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black'>        </span><b><span lang=EN-US style='font-family:"Courier New";
+color:#7F0055'>return</span></b><span lang=EN-US style='font-family:"Courier New";
+color:black'> </span><span lang=EN-US style='font-family:"Courier New";
+color:#0000C0'>dao</span><span lang=EN-US style='font-family:"Courier New";
+color:black'>.createJEPLDAOQuery(</span><span lang=EN-US style='font-family:
+"Courier New";color:#2A00FF'>&quot;SELECT * FROM CONTACT&quot;</span><span
+lang=EN-US style='font-family:"Courier New";color:black'>)</span></p>
+
+<p class=MsoNormal align=left style='margin:0cm;margin-bottom:.0001pt;
+text-align:left;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black'>                .setFirstResult(from)</span></p>
+
+<p class=MsoNormal align=left style='margin:0cm;margin-bottom:.0001pt;
+text-align:left;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black'>                .setMaxResults(to - from)</span></p>
+
+<p class=MsoNormal align=left style='margin:0cm;margin-bottom:.0001pt;
+text-align:left;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black'>                .<u>getResultList</u>();</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Courier New";
+color:black'>    }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>can be used to get paginated sets of rows
+without loading more rows than requested.</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:9.0pt;font-family:"Verdana","sans-serif"'>[1]</span></span></span></span></a><span
+lang=EN-GB> <a href="http://code.google.com/p/jeplayer/">http://code.google.com/p/jeplayer/</a></span></p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:9.0pt;font-family:"Verdana","sans-serif"'>[2]</span></span></span></span></a><span
+lang=EN-GB> </span><span lang=EN-GB><a href="http://code.google.com/p/sqldroid/"><span
+lang=ES>http://code.google.com/p/sqldroid/</span></a></span><span lang=EN-GB> </span></p>
+
+</div>
+
+<div id=ftn3>
+
+<p class=MsoFootnoteText><a href="#_ftnref3" name="_ftn3" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:9.0pt;font-family:"Verdana","sans-serif"'>[3]</span></span></span></span></a><span
+lang=EN-GB> </span><span lang=EN-GB><a
+href="http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html"><span
+lang=ES>http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html</span></a></span><span
+lang=EN-GB> </span></p>
+
+</div>
+
+<div id=ftn4>
+
+<p class=MsoFootnoteText><a href="#_ftnref4" name="_ftn4" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:9.0pt;font-family:"Verdana","sans-serif"'>[4]</span></span></span></span></a><span
+lang=EN-GB> In spite of </span><span lang=EN-US>Android includes a internal and
+mysterious JDBC “driver” for SQLite, its use is discouraged</span></p>
+
+</div>
+
+<div id=ftn5>
+
+<p class=MsoFootnoteText><a href="#_ftnref5" name="_ftn5" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:9.0pt;font-family:"Verdana","sans-serif"'>[5]</span></span></span></span></a><span
+lang=EN-GB> <a href="http://code.google.com/p/jeplayer/downloads/list">http://code.google.com/p/jeplayer/downloads/list</a>
+</span></p>
+
+</div>
+
+<div id=ftn6>
+
+<p class=MsoFootnoteText><a href="#_ftnref6" name="_ftn6" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:9.0pt;font-family:"Verdana","sans-serif"'>[6]</span></span></span></span></a><span
+lang=EN-GB> </span><span lang=EN-GB><a
+href="http://www.apache.org/licenses/LICENSE-2.0.html"><span lang=EN-US>http://www.apache.org/licenses/LICENSE-2.0.html</span></a></span><span
+lang=EN-GB> </span></p>
+
+</div>
+
+<div id=ftn7>
+
+<p class=MsoFootnoteText><a href="#_ftnref7" name="_ftn7" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:9.0pt;font-family:"Verdana","sans-serif"'>[7]</span></span></span></span></a><span
+lang=EN-GB> <a
+href="http://stackoverflow.com/questions/6589797/how-to-get-package-name-from-anywhere">http://stackoverflow.com/questions/6589797/how-to-get-package-name-from-anywhere</a></span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

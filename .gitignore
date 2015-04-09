@@ -1,5 +1,9 @@
-# Si ya fueron anyadidos la regla no se aplica, hay que hacer antes: git rm -cached file
+.gradle
+/local.properties
+# http://stackoverflow.com/questions/11968531/what-to-gitignore-from-the-idea-folder
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/*.iws
+/.idea/libraries
+/build
 
-/bin
-/gen
-/tmp

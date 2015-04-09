@@ -1,3 +1,0 @@
-
-* Ejecutar tests con el jar en vez del código fuente
-

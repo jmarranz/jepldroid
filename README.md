@@ -1,7 +1,7 @@
 JEPLDroid
 ========
 	
-Android Based Simple persistent Object Relational Mapping (ORM) API on top of JDBC
+Android based simple persistent Object Relational Mapping (ORM) API on top of JDBC
 
 Overview
 ------
@@ -17,8 +17,9 @@ JEPLDroid can works with any Android compatible JDBC driver but specifically it 
 News
 ------
 
+- 2015-04-10 JEPLDroid 1.2 is out (aligned to JEPLayer 1.2). First release uploaded to JCenter and Maven Central
 - 2012-11-26 Source code now in GitHub
-- 2012-10-25 JEPLDroid 1.1 is out (first release aligned to JEPLayer 1.1)
+- 2012-10-25 JEPLDroid 1.1 is out (first release, aligned to JEPLayer 1.1)
 
 
 Download Binaries and Docs

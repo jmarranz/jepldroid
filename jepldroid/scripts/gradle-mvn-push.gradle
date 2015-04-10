@@ -179,16 +179,13 @@ task distribute(dependsOn: build) {
     tasks.copyToZipDistDocsManualFolder.execute()
 
     task zipDist(type: Zip) {
+        baseName = 'JEPLDroid_dist'
+        classifier = projectVersion
         from zipDistFolder
-        into distributeFolder
-        /*
-        into('libs') {
-            from configurations.runtime
-        }
-        */
+        include '**'
+        // into distributeFolder
+        destinationDir distributeFolder
     }
 
     tasks.zipDist.execute()
 }
-
-

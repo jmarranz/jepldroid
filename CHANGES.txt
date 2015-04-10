@@ -1,6 +1,11 @@
 
  RELEASE CHANGES
 
+* 1.2 Release
+
+  Version based on JEPLayer v1.2
+  First release uploaded to JCenter and Maven Central
+
 * 1.1 Release
 
   First version based on JEPLayer v1.1

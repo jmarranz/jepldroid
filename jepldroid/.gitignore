@@ -1,2 +1,6 @@
 /build
 /docs_internal/
+
+# excluimos los formatos generados a partir del Word (html y pdf)
+/docs_src/jepldroid_manual.htm
+/docs_src/jepldroid_manual.pdf

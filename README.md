@@ -61,6 +61,8 @@ Examples
 
 See the GitHub repository of [JEPLayer Examples](https://github.com/jmarranz/jeplayer_examples), ignore JTA based examples.
 
+In the source code of the "app" application you can find a very simple example of using JEPLDroid in Android.
+
 Questions and discussions
 ------
 

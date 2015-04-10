@@ -8,5 +8,5 @@
 
 * 1.1 Release
 
-  First version based on JEPLayer v1.1
+  First release, based on JEPLayer v1.1
 

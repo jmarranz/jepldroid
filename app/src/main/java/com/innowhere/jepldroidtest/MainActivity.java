@@ -82,7 +82,7 @@ public class MainActivity extends ActionBarActivity {
     {
         StringBuilder output = new StringBuilder();
 
-        output.append("Coffee Break Coffees and Prices (JEPLayer):\n\n");
+        output.append("Coffee Break Coffees and Prices (JEPLDroid):\n\n");
 
         SimpleDataSource ds = new SimpleDataSource(org.sqldroid.SQLDroidDriver.class.getName(),url, login,password, 1);
 

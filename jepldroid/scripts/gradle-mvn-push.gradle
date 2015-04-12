@@ -46,6 +46,10 @@ task generatePom << {  // http://stackoverflow.com/questions/17281927/how-to-mak
 
             // inceptionYear '2008'
 
+            name 'jepldroid'
+            description 'Android based simple persistent Object Relational Mapping (ORM) API on top of JDBC'
+            url 'https://github.com/jmarranz/jepldroid'
+
             scm {
                 connection "scm:git:git@github.com:jmarranz/jepldroid.git";
                 developerConnection "scm:git:git@github.com:jmarranz/jepldroid.git";

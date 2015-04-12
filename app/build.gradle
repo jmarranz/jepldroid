@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.innowhere.jepldroidtest"
         minSdkVersion 15
-        targetSdkVersion 22
+        targetSdkVersion 15
         versionCode 1
         versionName "1.0"
     }
@@ -26,10 +26,13 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.0.0'
-    // compile(name: 'jepldroid-debug', ext: 'aar')
-    compile project(':jepldroid')
 
-    compile 'com.github.amlcurran.showcaseview:library:5.0.0' // Just to test downloading an aar (apklib) in JCenter/Maven https://github.com/amlcurran/ShowcaseView  https://bintray.com/bintray/jcenter/com.github.amlcurran.showcaseview%3Alibrary/5.0.0/view#files
+    compile 'org.sqldroid:sqldroid:1.0.3'
+
+    //compile project(':jepldroid')
+    compile 'com.innowhere:jepldroid:1.2'
+
+    // compile 'com.github.amlcurran.showcaseview:library:5.0.0' // Just to test downloading an aar (apklib) in JCenter/Maven https://github.com/amlcurran/ShowcaseView  https://bintray.com/bintray/jcenter/com.github.amlcurran.showcaseview%3Alibrary/5.0.0/view#files
 }
 
 

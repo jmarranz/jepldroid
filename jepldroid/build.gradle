@@ -8,10 +8,10 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 22
+        minSdkVersion 9   // suficientemente antigua (Android 2.1)
+        targetSdkVersion 9
         versionCode 1
-        versionName "1.0"
+        versionName "1.2"
     }
     buildTypes {
         release {
@@ -27,11 +27,12 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.0.0'
+    // compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'org.sqldroid:sqldroid:1.0.3'
 
-    // androidTestCompile 'junit:junit-dep:4.10'  // http://stackoverflow.com/questions/22702267/android-gradle-dexexception-multiple-dex-files-defined
+    // androidTestCompile 'junit:junit-dep:4.10'
 
-    androidTestCompile('junit:junit:4.+') { exclude module: 'hamcrest-core' }
+    // http://stackoverflow.com/questions/22702267/android-gradle-dexexception-multiple-dex-files-defined
+    androidTestCompile('junit:junit:4.12') { exclude module: 'hamcrest-core' }
 }
 

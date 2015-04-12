@@ -5,6 +5,7 @@ apply plugin: 'maven'
 // http://jedicoder.blogspot.com.es/2011/11/automated-gradle-project-deployment-to.html
 // http://stackoverflow.com/questions/11474729/how-to-build-sources-jar-with-gradle
 // https://github.com/raycoarana/roborouter/blob/master/scripts/gradle-mvn-push.gradle
+// https://github.com/amlcurran/ShowcaseView/blob/master/library/gradle-mvn-push.gradle
 
 
 def projectGroupId =    'com.innowhere';

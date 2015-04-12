@@ -10,14 +10,14 @@ removing stuff not compatible or hard to port to the Android environment like JT
 
 JEPLayer is a simple and powerful ORM specifically focused on easy and secure management of JDBC and JTA transactions.
 
-JEPLDroid can works with any Android compatible JDBC driver but specifically it leverages the JDBC API provided by SQLDroid
+JEPLDroid can works with any Android compatible JDBC driver but specifically it leverages [SQLDroid](https://github.com/SQLDroid/SQLDroid)
 (automatically detected), the famous JDBC driver for the built-in SQLite database engine included in any Android based device.
 
 
 News
 ------
 
-- 2015-04-10 JEPLDroid 1.2 is out (aligned to JEPLayer 1.2). First release uploaded to JCenter and Maven Central
+- 2015-04-12 JEPLDroid 1.2 is out (aligned to JEPLayer 1.2). First release uploaded to JCenter and Maven Central
 - 2012-11-26 Source code now in GitHub
 - 2012-10-25 JEPLDroid 1.1 is out (first release, aligned to JEPLayer 1.1)
 

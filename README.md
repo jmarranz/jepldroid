@@ -72,7 +72,7 @@ See the GitHub repository of [JEPLayer Examples](https://github.com/jmarranz/jep
 In the source code of the "app" application you can find a very simple example of using JEPLDroid in Android ([code example](https://github.com/jmarranz/jepldroid/blob/master/app/src/main/java/com/innowhere/jepldroidtest/MainActivity.java)).
 This example is based on SQLite by using SQLDroid JDBC bridge. To provide a DataSource (required by JEPLDroid and JEPLayer) you can use this
 class [SimpleDataSource](https://github.com/jmarranz/jepldroid/blob/master/app/src/main/java/com/innowhere/jepldroidtest/SimpleDataSource.java)
-(and also [SimpleConnectionWrapper](https://github.com/jmarranz/jepldroid/blob/master/app/src/main/java/com/innowhere/jepldroidtest/SimpleConnectionWrapper.java).
+(and also [SimpleConnectionWrapper](https://github.com/jmarranz/jepldroid/blob/master/app/src/main/java/com/innowhere/jepldroidtest/SimpleConnectionWrapper.java)).
 
 
 Questions and discussions

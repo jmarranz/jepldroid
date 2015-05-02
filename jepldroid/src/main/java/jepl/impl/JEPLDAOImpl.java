@@ -15,13 +15,17 @@
 */
 package jepl.impl;
 
-import jepl.impl.query.JEPLDAOQueryImpl;
 import jepl.JEPLDAO;
+import jepl.JEPLDAOQuery;
+import jepl.JEPLPersistAction;
+import jepl.impl.query.JEPLDAOQueryDefaultImpl;
+import jepl.impl.query.JEPLDAOQueryUpdateImpl;
 
 /**
  * This class is designed to inherit end user classes to provide DAO based services.
  *
  * @author jmarranz
+ * @param <T>
  */
 public class JEPLDAOImpl<T> extends JEPLDALImpl implements JEPLDAO<T>
 {
@@ -30,9 +34,27 @@ public class JEPLDAOImpl<T> extends JEPLDALImpl implements JEPLDAO<T>
         super(ds);
     }
 
-    public JEPLDAOQueryImpl<T> createJEPLDAOQuery(String sql)
+    @Override
+    public JEPLDAOQuery<T> createJEPLDAOQuery(String sql)
     {
-        return new JEPLDAOQueryImpl<T>(this,sql);
+        return new JEPLDAOQueryDefaultImpl<T>(this,sql);
     }
 
+    @Override
+    public JEPLDAOQuery<T> insert(T obj)
+    {
+        return new JEPLDAOQueryUpdateImpl<T>(this,obj,JEPLPersistAction.INSERT);
+    }    
+    
+    @Override
+    public JEPLDAOQuery<T> update(T obj)
+    {
+        return new JEPLDAOQueryUpdateImpl<T>(this,obj,JEPLPersistAction.UPDATE);
+    }
+    
+    @Override
+    public JEPLDAOQuery<T> delete(T obj)
+    {
+        return new JEPLDAOQueryUpdateImpl<T>(this,obj,JEPLPersistAction.DELETE);
+    }            
 }

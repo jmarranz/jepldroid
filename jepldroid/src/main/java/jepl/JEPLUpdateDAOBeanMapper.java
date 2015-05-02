@@ -19,14 +19,22 @@ package jepl;
 import java.lang.reflect.Method;
 
 /**
+ * {@link TO DO}
  * The interface of the optional row-bean mapper to modify the default mapping behavior of a 
  * {@link JEPLResultSetDAOListenerDefault} listener.
  *
+ * @param <T> the type of the user data model Class to map.  
  * @author jmarranz
  */
-public interface JEPLRowBeanMapper<T>
+public interface JEPLUpdateDAOBeanMapper<T>
 {
     /**
+     * {@link TO DO}    
+    */
+    public static final Object NO_VALUE = new Object();    
+    
+    /**
+     * {@link TO DO}
      * This method is called when trying to map the value got from a column of a ResultSet
      * to a property specified by the parameter setter of the user data model object provided (parameter obj)
      *
@@ -44,5 +52,5 @@ public interface JEPLRowBeanMapper<T>
      * @param setter the Java reflection setter method of the user data model object found matching the column by name. May be null (not found setter).
      * @return true if developer has "manually" mapped this column-property (no default mapping is done).
      */
-    public boolean setColumnInBean(T obj,JEPLResultSet jrs,int col,String columnName,Object value,Method setter);
+    public Object getColumnFromBean(T obj,JEPLConnection jcon,String columnName,Method getter,JEPLPersistAction action) throws Exception;
 }

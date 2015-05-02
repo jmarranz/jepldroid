@@ -280,10 +280,26 @@ public interface JEPLDALQuery
     public <U> U getGeneratedKey(Class<U> returnType);
 
     /**
+     * This method must be used to execute a SELECT statement,
+     * it returns a connected result set ready to iterate and get database data.
+     *
+     * @return the connected result set of data model objects.
+     */
+    public JEPLResultSet getJEPLResultSet();
+       
+    
+    /**
      * This method must be used to execute a SELECT statement, it returns a disconnected result set
      * (works with connection closed).
      *
      * @return the disconnected result set containing all of results.
      */
     public JEPLCachedResultSet getJEPLCachedResultSet();
+    
+    
+    /**
+     * {@link TO DO}
+     * @return 
+     */
+    public String getCode();
 }

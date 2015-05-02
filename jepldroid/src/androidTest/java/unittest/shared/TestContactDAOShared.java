@@ -40,6 +40,9 @@ import jepl.JEPLTask;
 import example.dao.ContactDAO;
 import example.loadmanually.DataSourceLoaderManualLoad;
 import example.model.Contact;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -62,6 +65,18 @@ public abstract class TestContactDAOShared
         return task;
     }
 
+    private static void cleanAndInsertTwoContact(ContactDAO dao)
+    {
+        dao.deleteAll();
+        Contact cont = TestDAOShared.createContact();
+        dao.insert(cont);
+        Contact cont2 = TestDAOShared.createContact();
+        dao.insert(cont2);    
+        
+        int count = dao.selectAll().size();
+        assertTrue(count == 2);        
+    }
+    
     public static void testStandAloneDAODAL(JEPLDataSource jds)
     {
         JEPLDAL dal = jds.createJEPLDAL();
@@ -83,6 +98,27 @@ public abstract class TestContactDAOShared
         jds.exec(task);
     }
 
+    public void testInsertUpdateDeleteImplicitUpdateListeners(final JEPLDataSource jds) 
+    {    
+        // NO debe haber una transacción abierta previamente en este test, ni dentro de un task
+        assertTrue(jds.getCurrentJEPLConnection() == null);
+        
+        // Tables empty initialization
+        // because delete actions are tricky, doing manually (testing delete later)
+
+        ContactDAO dao = new ContactDAO(jds);
+        clearTables(dao);        
+        
+        testInsertImplicitUpdateDAOListener(dao);        
+        testInsertImplicitUpdateDAOListenerTestGenCode(dao);              
+        
+        testUpdateImplicitUpdateDAOListener(dao);        
+        testUpdateImplicitUpdateDAOListenerTestGenCode(dao);          
+        
+        testDeleteImplicitUpdateDAOListener(dao);        
+        testDeleteImplicitUpdateDAOListenerTestGenCode(dao);        
+    }
+    
     public void testListenersAsParams(final JEPLDataSource jds) 
     {
         // NO debe haber una transacción abierta previamente en este test, ni dentro de un task
@@ -96,18 +132,21 @@ public abstract class TestContactDAOShared
 
         testJEPLConnectionListenerAsParameter(dao);
 
-        testJDBCResultSetDALListenerAsParameter(dao);
+        testJEPLPreparedStatementListenerAsParameter(dao);        
+        
+        testJEPLResultSetDALListenerAsParameter(dao);
 
-        testJDBCResultSetDAOListenerAsParameter(dao);
+        testJEPLResultSetDAOListenerAsParameter(dao);
 
-        testPreparedStatementListenerAsParameter(dao);
+        testJEPLUpdateDAOListenerAsParameter(dao);      
     }
 
-    public static void testPreparedStatementListenerAsParameter(ContactDAO dao)
+    public static void testJEPLPreparedStatementListenerAsParameter(ContactDAO dao)
     {
         // Test PreparedStatementListener as parameter
-        List<Contact> list = dao.selectAll();
-        assertTrue(list.size() > 1);
+        cleanAndInsertTwoContact(dao);
+        
+        List<Contact> list;
         if (!DataSourceLoaderManualLoad.android) // PreparedStatement.setMaxRows is not implemented in SQLDroid
         {        
 	        list = dao.selectAllStatementListenerMaxRows( 1 );
@@ -119,28 +158,22 @@ public abstract class TestContactDAOShared
         assertTrue(list.size() > 1); // Check whether maxRows filter was removed
     }
 
-    public static void testJDBCResultSetDAOListenerAsParameter(ContactDAO dao)
+    public static void testJEPLResultSetDAOListenerAsParameter(ContactDAO dao)
     {
         // Test JEPLResultSetDAOListener as parameter
-        dao.deleteAll();
-        Contact cont = TestDAOShared.createContact();
-        dao.insert(cont);
-        Contact cont2 = TestDAOShared.createContact();
-        dao.insert(cont2);
-        int count = dao.selectAll().size();
-        assertTrue(count == 2);
+        cleanAndInsertTwoContact(dao);
 
         List<Contact> list;
 
-        list = dao.selectAllExplicitResultSetListener();
+        list = dao.selectAllExplicitResultSetDAOListener();
         assertTrue(list.size() == 2);
 
-        list = dao.selectAllExplicitResultSetDAOListenerBean();
+        list = dao.selectAllExplicitResultSetDAOListenerDefault();
         assertTrue(list.size() == 2);
         TestDAOShared.checkContact(list.get(0));
         TestDAOShared.checkContact(list.get(1));
 
-        list = dao.selectAllExplicitResultSetDAOListenerBeanWithMapper();
+        list = dao.selectAllExplicitResultSetDAOListenerDefaultWithMapper();
         assertTrue(list.size() == 2);
         TestDAOShared.checkContact(list.get(0));
         TestDAOShared.checkContact(list.get(1));
@@ -148,7 +181,7 @@ public abstract class TestContactDAOShared
         // Test JEPLResultSetDAOListener as parameter, query a range
         for(int i = 0; i < 10; i++)
         {
-            cont = TestDAOShared.createContact();
+            Contact cont = TestDAOShared.createContact();
             dao.insert(cont);
         }
         if (!DataSourceLoaderManualLoad.android) // ResultSet.absolute() is not implemented in SQLDroid
@@ -172,23 +205,141 @@ public abstract class TestContactDAOShared
         }
     }
 
-    public static void testJDBCResultSetDALListenerAsParameter(ContactDAO dao)
+    public static void testJEPLUpdateDAOListenerAsParameter(ContactDAO dao)
+    {
+        // Test JEPLResultSetDAOListener as parameter
+        dao.deleteAll();
+        Contact cont = TestDAOShared.createContact();
+
+        {
+        dao.insertExplicitUpdateDAOListener(cont);
+        dao.delete(cont);
+        
+        dao.insertExplicitUpdateDAOListenerDefault(cont);
+        dao.delete(cont);        
+
+        dao.insertExplicitUpdateDAOListenerDefaultWithMapper(cont);
+        dao.delete(cont);
+        
+        testInsertExplicitUpdateDAOListenerUseObjectKey(dao);
+        testInsertExplicitUpdateDAOListenerUseObjectKeyGenCode(dao);                
+        }
+        
+        {
+        dao.insert(cont);        
+        dao.updateExplicitUpdateDAOListener(cont);       
+        dao.updateExplicitUpdateDAOListenerDefault(cont);     
+        dao.updateExplicitUpdateDAOListenerDefaultWithMapper(cont);
+        dao.delete(cont);        
+        }
+        
+        {
+        dao.insert(cont);        
+        dao.deleteExplicitUpdateDAOListener(cont);       
+        
+        dao.insert(cont);         
+        dao.deleteExplicitUpdateDAOListenerDefault(cont);     
+        
+        dao.insert(cont);         
+        dao.deleteExplicitUpdateDAOListenerDefaultWithMapper(cont);       
+        }        
+        
+        assertTrue(dao.selectAll().isEmpty());
+    }
+    
+    
+    public static void testInsertImplicitUpdateDAOListener(ContactDAO dao)
     {
         // Test JDBCResultSetDALListener as parameter
         Contact cont = TestDAOShared.createContact();
-        dao.insertExplicitResultSetListener(cont);
+        dao.insertImplicitUpdateDAOListener(cont);        
+        dao.delete(cont);
+    }        
+    
+    public static void testInsertImplicitUpdateDAOListenerTestGenCode(ContactDAO dao)
+    {
+        // Test JDBCResultSetDALListener as parameter
+        Contact cont = TestDAOShared.createContact();
+        String code = dao.insertImplicitUpdateDAOListenerTestGenCode(cont);
+        assertEquals("INSERT INTO CONTACT (NAME,PHONE,EMAIL) VALUES (?,?,?)",code); // No se incluye el ID pues se detecta en el esquema que es generado
+        dao.delete(cont);
+    }            
+    
+    public static void testInsertExplicitUpdateDAOListenerUseObjectKey(ContactDAO dao)
+    {
+        // Test JDBCResultSetDALListener as parameter
+        Contact cont = TestDAOShared.createContact();
+        cont.setId(100000);
+        dao.insertExplicitUpdateDAOListenerUseObjectKey(cont);        
+        dao.delete(cont);
+    }                
+            
+    public static void testInsertExplicitUpdateDAOListenerUseObjectKeyGenCode(ContactDAO dao)
+    {
+        // Test JDBCResultSetDALListener as parameter
+        Contact cont = TestDAOShared.createContact();
+        cont.setId(100000);        
+        String code = dao.insertExplicitUpdateDAOListenerUseObjectKeyTestGenCode(cont);
+        assertEquals("INSERT INTO CONTACT (ID,NAME,PHONE,EMAIL) VALUES (?,?,?,?)",code); 
+        dao.delete(cont);
+    }               
+    
+    
+    public static void testUpdateImplicitUpdateDAOListener(ContactDAO dao)
+    {
+        // Test JDBCResultSetDALListener as parameter
+        Contact cont = TestDAOShared.createContact();
+        dao.insert(cont);
+        dao.updateImplicitUpdateDAOListener(cont);        
+        dao.delete(cont);
+    }        
+    
+    public static void testUpdateImplicitUpdateDAOListenerTestGenCode(ContactDAO dao)
+    {
+        // Test JDBCResultSetDALListener as parameter
+        Contact cont = TestDAOShared.createContact();
+        dao.insert(cont);        
+        String code = dao.updateImplicitUpdateDAOListenerTestGenCode(cont);
+        assertEquals("UPDATE CONTACT SET NAME = ?,PHONE = ?,EMAIL = ? WHERE ID = ?",code); // Se detecta que el ID es clave
+        
+        dao.delete(cont);
+    }       
+    
+    public static void testDeleteImplicitUpdateDAOListener(ContactDAO dao)
+    {
+        // Test JDBCResultSetDALListener as parameter
+        Contact cont = TestDAOShared.createContact();
+        dao.insert(cont);
+        dao.deleteImplicitUpdateDAOListener(cont);        
+    }        
+    
+    public static void testDeleteImplicitUpdateDAOListenerTestGenCode(ContactDAO dao)
+    {
+        // Test JDBCResultSetDALListener as parameter
+        Contact cont = TestDAOShared.createContact();
+        dao.insert(cont);        
+        String code = dao.deleteImplicitUpdateDAOListenerTestGenCode(cont);
+        assertEquals("DELETE FROM CONTACT WHERE ID = ?",code); // Se detecta que el ID es clave
+    }           
+    
+    public static void testJEPLResultSetDALListenerAsParameter(ContactDAO dao)
+    {
+        // Test JDBCResultSetDALListener as parameter
+        Contact cont = TestDAOShared.createContact();
+        dao.insertExplicitResultSetDALListener(cont);
         dao.delete(cont);
     }
     
     public void testJEPLConnectionListenerAsParameter(ContactDAO dao)
     {
-        final JEPLDataSource jds = dao.getJEPLDAO().getJEPLDataSource();
+        JEPLDAL dal = dao.getJEPLDAO();
+        final JEPLDataSource jds = dal.getJEPLDataSource();
         
         final boolean[] used = new boolean[1];
         
         // Test JEPLConnectionListener as parameter autoCommit = true (only non-JTA)
         used[0] = false;
-        dao.getJEPLDAO().createJEPLDALQuery("DELETE FROM CONTACT")
+        dal.createJEPLDALQuery("DELETE FROM CONTACT")
             .addJEPLListener(new JEPLConnectionListener()
             {
                 public void setupJEPLConnection(JEPLConnection con,JEPLTask task) throws Exception
@@ -213,7 +364,7 @@ public abstract class TestContactDAOShared
         dao.insert(cont);
         assertTrue(cont.getId() != 0);
         used[0] = false;
-        int res = dao.getJEPLDAO().createJEPLDALQuery("DELETE FROM CONTACT")
+        int res = dal.createJEPLDALQuery("DELETE FROM CONTACT")
             .addJEPLListener(new JEPLConnectionListener<Integer>()
             {
                 public void setupJEPLConnection(JEPLConnection con,JEPLTask<Integer> task) throws Exception
@@ -236,7 +387,7 @@ public abstract class TestContactDAOShared
         used[0] = false;
         try
         {
-            dao.getJEPLDAO().createJEPLDALQuery("DELETE FROM CONTACT")
+            dal.createJEPLDALQuery("DELETE FROM CONTACT")
                 .addJEPLListener(new JEPLConnectionListener<Integer>()
                 {
                     public void setupJEPLConnection(JEPLConnection con,JEPLTask<Integer> task) throws Exception
@@ -275,9 +426,10 @@ public abstract class TestContactDAOShared
     {
         // Tables empty initialization
         // because delete actions are tricky we're doing manually (testing delete in another place)
-        dao.getJEPLDAO().createJEPLDALQuery("DELETE FROM PERSON").executeUpdate();
-        dao.getJEPLDAO().createJEPLDALQuery("DELETE FROM COMPANY").executeUpdate();
-        dao.getJEPLDAO().createJEPLDALQuery("DELETE FROM CONTACT").executeUpdate();
+        JEPLDAL dal = dao.getJEPLDAO();
+        dal.createJEPLDALQuery("DELETE FROM PERSON").executeUpdate();
+        dal.createJEPLDALQuery("DELETE FROM COMPANY").executeUpdate();
+        dal.createJEPLDALQuery("DELETE FROM CONTACT").executeUpdate();
         
         List<Contact> listContact = dao.selectAll();
         assertTrue(listContact.isEmpty());
@@ -302,13 +454,17 @@ public abstract class TestContactDAOShared
     {
         clearTables(dao);
 
+        JEPLDAL dal = dao.getJEPLDAO();
+        
         Contact cont = testGetGeneratedKeyAndGetSingleResult(dao);
 
         Contact cont2 = testGetResultList(cont,dao);
 
+        testGetJEPLResultSet(dal);
+        
         testGetJEPLResultSetDAO(dao);
-
-        testGetJEPLCachedResultSet(dao);
+        
+        testGetJEPLCachedResultSet(dal);
 
         testGetOneRowFromSingleField(dao);
 
@@ -355,10 +511,70 @@ public abstract class TestContactDAOShared
         assertTrue(count == 2);
     }
 
-    public static void testGetJEPLCachedResultSet(ContactDAO dao)
+    public static void testGetJEPLResultSet(final JEPLDAL dal)
+    {          
+        // Test getJEPLResultSet()
+        // Se necesita una conexión abierta (un task) para que funcione el JEPLResultSet        
+        if (dal.getJEPLDataSource().getCurrentJEPLConnection() != null)
+        {                
+            try
+            {
+                // Test getJEPLResultSet
+                JEPLResultSet resSet = dal.createJEPLDALQuery(
+                        "SELECT COUNT(*) AS CO,AVG(ID) AS AV FROM CONTACT")
+                        .getJEPLResultSet();
+
+                assertFalse(resSet.isClosed());                
+                
+                ResultSet rs = resSet.getResultSet();
+                ResultSetMetaData metadata = rs.getMetaData();
+                int ncols = metadata.getColumnCount();
+                String[] colNames = new String[ncols];
+                for(int i = 0; i < ncols; i++)
+                    colNames[i] = metadata.getColumnLabel(i + 1); // Empieza en 1                     
+                
+                assertTrue(colNames.length == 2);
+                assertTrue(colNames[0].equals("CO"));
+                assertTrue(colNames[1].equals("AV"));
+
+                assertTrue(rs.getRow() == 0);                 
+                
+                assertFalse(resSet.isClosed());
+
+                resSet.next();
+
+                assertTrue(rs.getRow() == 1);
+
+                int count = rs.getInt(1);
+                assertTrue(count == 2);       
+                count = rs.getInt("CO");
+                assertTrue(count == 2);
+
+                float avg = rs.getFloat(1);
+                assertTrue(avg > 0);        
+                avg = rs.getFloat("AV");
+                assertTrue(avg > 0);                       
+                    
+            
+                assertFalse(resSet.next());                
+                assertTrue(resSet.isClosed());                
+         
+                assertTrue(resSet.count() == 1);                
+            }
+            catch(SQLException ex)
+            {
+                ex.printStackTrace();
+                throw new RuntimeException(ex);
+            }
+            
+        }
+
+    }    
+    
+    public static void testGetJEPLCachedResultSet(JEPLDAL dal)
     {
         // Test getJEPLCachedResultSet
-        JEPLCachedResultSet resSet = dao.getJEPLDAO().createJEPLDALQuery(
+        JEPLCachedResultSet resSet = dal.createJEPLDALQuery(
                 "SELECT COUNT(*) AS CO,AVG(ID) AS AV FROM CONTACT")
                 .getJEPLCachedResultSet();
         String[] colNames = resSet.getColumnLabels();
@@ -382,7 +598,8 @@ public abstract class TestContactDAOShared
     {
         // Test getJEPLResultSetDAO()
         // Se necesita una conexión abierta (un task) para que funcione el JEPLResultSetDAO
-        if (dao.getJEPLDAO().getJEPLDataSource().getCurrentJEPLConnection() != null)
+        JEPLDAL dal = dao.getJEPLDAO();
+        if (dal.getJEPLDataSource().getCurrentJEPLConnection() != null)
         {
             List<Contact> list = new LinkedList<Contact>();
             JEPLResultSetDAO<Contact> resSetDAO = dao.selectAllResultSetDAO();

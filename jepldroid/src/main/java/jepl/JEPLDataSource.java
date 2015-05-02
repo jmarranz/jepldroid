@@ -69,6 +69,8 @@ public interface JEPLDataSource extends JEPLUserData
     /**
      * Returns the current connection being used by this thread in the time of calling.
      *
+     * <p>When executing JEPLayer code inside a {@link JEPLTask} a connection is already open and this method returns a value different to null.</p>
+     * 
      * @return the current connection of this thread. Null if there is no connection in use.
      */
     public JEPLConnection getCurrentJEPLConnection();
@@ -117,7 +119,7 @@ public interface JEPLDataSource extends JEPLUserData
      * @param mapper optional mapper (may be null) to change default mapping behavior for concrete properties.
      * @return a new result set mapper bean.
      */
-    public <T> JEPLResultSetDAOListenerDefault<T> createJEPLResultSetDAOListenerDefault(Class<T> clasz,JEPLRowBeanMapper<T> mapper);
+    public <T> JEPLResultSetDAOListenerDefault<T> createJEPLResultSetDAOListenerDefault(Class<T> clasz,JEPLResultSetDAOBeanMapper<T> mapper);
 
     /**
      * Creates a default {@link JEPLResultSetDAOListener} bean providing automatic mapping
@@ -126,10 +128,34 @@ public interface JEPLDataSource extends JEPLUserData
      * @param <T> the type of the user data model Class to map.
      * @param clasz the class of the user data model Class to map.
      * @return a new result set mapper bean.
-     * @see #createJEPLResultSetDAOListenerDefault(Class,JEPLRowBeanMapper)
+     * @see #createJEPLResultSetDAOListenerDefault(Class,JEPLResultSetDAOBeanMapper)
      */
     public <T> JEPLResultSetDAOListenerDefault<T> createJEPLResultSetDAOListenerDefault(Class<T> clasz);
 
+    /**
+     * {@link TO DO}      
+     * Creates a default {@link JEPLResultSetDAOListener} bean providing automatic mapping
+     * between your user data model objects and data base rows.
+     *
+     * @param <T> the type of the user data model Class to map.
+     * @param clasz the class of the user data model Class to map.
+     * @param mapper optional mapper (may be null) to change default mapping behavior for concrete properties.
+     * @return a new result set mapper bean.
+     */
+    public <T> JEPLUpdateDAOListenerDefault<T> createJEPLUpdateDAOListenerDefault(Class<T> clasz,JEPLUpdateDAOBeanMapper<T> mapper);
+    
+    /**
+     * {@link TO DO}
+     * Creates a default {@link JEPLResultSetDAOListener} bean providing automatic mapping
+     * between your user data model objects and data base rows.
+     *
+     * @param <T> the type of the user data model Class to map.
+     * @param clasz the class of the user data model Class to map.
+     * @return a new result set mapper bean.
+     * @see #createJEPLResultSetDAOListenerDefault(Class,JEPLResultSetDAOBeanMapper)
+     */
+    public <T> JEPLUpdateDAOListenerDefault<T> createJEPLUpdateDAOListenerDefault(Class<T> clasz);    
+    
 
     /**
      * Executes the specified task, a JDBC Connection is got from DataSource in the beginning

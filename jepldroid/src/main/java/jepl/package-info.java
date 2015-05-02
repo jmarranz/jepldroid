@@ -1,6 +1,6 @@
 
 /**
- * Contains interfaces and classes of the JEPLayer library.
+ * Contains public interfaces and classes of the JEPLayer library.
  *
  * @author jmarranz
  */

@@ -20,7 +20,8 @@ package jepl;
  * a built-in ready to use mapping between ResultSet and user defined objects
  * following Java Bean patterns (properties).
  * 
- * @see JEPLDataSource#createJEPLResultSetDAOListenerDefault(Class,JEPLRowBeanMapper)
+ * @param <T> the type of elements of this result set
+ * @see JEPLDataSource#createJEPLResultSetDAOListenerDefault(Class,JEPLResultSetDAOBeanMapper)
  * @author jmarranz
  */
 public interface JEPLResultSetDAOListenerDefault<T> extends JEPLResultSetDAOListener<T>
@@ -38,5 +39,5 @@ public interface JEPLResultSetDAOListenerDefault<T> extends JEPLResultSetDAOList
      *
      * @return the optional row-bean mapper. May be null.
      */
-    public JEPLRowBeanMapper<T> getJEPLRowBeanMapper();
+    public JEPLResultSetDAOBeanMapper<T> getJEPLResultSetDAOBeanMapper();
 }

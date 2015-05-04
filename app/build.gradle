@@ -29,7 +29,7 @@ dependencies {
     // compile(name: 'jepldroid-debug', ext: 'aar')
     compile project(':jepldroid')
 
-    compile 'com.github.amlcurran.showcaseview:library:5.0.0' // Just to test downloading an aar (apklib) in JCenter/Maven https://github.com/amlcurran/ShowcaseView  https://bintray.com/bintray/jcenter/com.github.amlcurran.showcaseview%3Alibrary/5.0.0/view#files
+    // compile 'com.github.amlcurran.showcaseview:library:5.0.0' // Just to test downloading an aar (apklib) in JCenter/Maven https://github.com/amlcurran/ShowcaseView  https://bintray.com/bintray/jcenter/com.github.amlcurran.showcaseview%3Alibrary/5.0.0/view#files
 }
 
 

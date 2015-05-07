@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.github.amlcurran.showcaseview.ShowcaseView;
+//import com.github.amlcurran.showcaseview.ShowcaseView;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -57,8 +57,7 @@ public class MainActivity extends ActionBarActivity {
 
             DriverManager.registerDriver(new org.sqldroid.SQLDroidDriver());
 
-            con =
-                    DriverManager.getConnection(url, "myLogin", "myPW");
+            con = DriverManager.getConnection(url, "myLogin", "myPW");
 
             stmt = con.createStatement();
             stmt.executeUpdate(dropString);

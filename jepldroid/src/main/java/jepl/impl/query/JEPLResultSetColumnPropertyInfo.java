@@ -13,23 +13,21 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-package jepl;
+
+package jepl.impl.query;
+
+import java.lang.reflect.Method;
 
 /**
- * If an implementation of this interface is correctly registered, is used to setup
- * the JDBC Connection before processing SQL statements.
  *
- * @param <T> the expected type.  
  * @author jmarranz
  */
-public interface JEPLConnectionListener<T> extends JEPLListener
+public class JEPLResultSetColumnPropertyInfo
 {
-    /**
-     * This method is called before processing SQL statements to configure the JDBC Connection.
-     *
-     * @param jcon the connection wrapper.
-     * @param task represents the consecutive task to be executed.
-     * @throws Exception
-     */
-    public void setupJEPLConnection(JEPLConnection jcon,JEPLTask<T> task) throws Exception;
+    public String columnName;
+    public Method setter;
+
+    public JEPLResultSetColumnPropertyInfo()
+    {
+    }
 }

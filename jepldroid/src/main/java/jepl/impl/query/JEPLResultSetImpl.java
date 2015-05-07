@@ -37,8 +37,9 @@ public abstract class JEPLResultSetImpl implements JEPLResultSet
     protected JEPLUserDataMonoThreadImpl userData = new JEPLUserDataMonoThreadImpl();
     protected boolean closed = false;
     protected boolean isc3po = false;
-    protected JEPLResultSetBeanInfo beanInfo;
-
+    protected JEPLResultSetColumnPropertyInfoList resultSetBeanInfo;
+    protected int count = 0;
+    
     public JEPLResultSetImpl(JEPLDALQueryImpl query,JEPLPreparedStatementImpl stmt,ResultSet result) throws SQLException
     {
         this.query = query;
@@ -48,18 +49,64 @@ public abstract class JEPLResultSetImpl implements JEPLResultSet
         Integer startPosition = query.getStartPosition();
         if (startPosition != null)
         {
-        	stmt.moveResultSetAbsolutePosition(result, startPosition);
+            stmt.moveResultSetAbsolutePosition(result, startPosition);
         }
     }
 
-    public JEPLResultSetBeanInfo getJEPLResultSetBeanInfo(Map<String,JEPLPropertyDescriptorImpl> proertyMap) throws SQLException
+    public JEPLResultSetColumnPropertyInfoList getJEPLResultSetColumnPropertyInfoList(Map<String,JEPLBeanPropertyDescriptorImpl> propertyMap) throws SQLException
     {
-        if (beanInfo == null)
-            this.beanInfo = new JEPLResultSetBeanInfo(proertyMap,getResultSet());
+        if (resultSetBeanInfo == null)
+            this.resultSetBeanInfo = new JEPLResultSetColumnPropertyInfoList(propertyMap,getResultSet());
         
-        return beanInfo;
+        return resultSetBeanInfo;
     }
 
+    public abstract String getErrorMsgClosed();  
+    
+    @Override
+    public boolean next()
+    {
+        if (isClosed()) throw new JEPLException(getErrorMsgClosed());
+        boolean res;
+        try
+        {
+            res = result.next();
+            if (res) count++;
+        }
+        catch (SQLException ex) { throw new JEPLException(ex); }
+
+        if (!res)
+        {
+            close(); // Cerramos automáticamente al terminar de iterar, en el caso de JEPLResultSetDAOImpl para que actue la colección interna desde ahora
+
+            if (query.mustCheckNumOfReturnedRows())
+                query.checkNumOfReturnedRows( count ); // Por intentar usar la regla del usuario de limitación de filas SIEMPRE (aunque tenga poco valor la verdad)
+        }
+        return res;
+    }    
+    
+    public abstract Object getRowContent();
+    
+    public void fetchToTheEndIfNotClosed() // Método interno
+    {
+//checkResultSetNotClosed();
+
+        if (isClosed()) return; // No hace falta
+        while(next())
+        {
+            getRowContent();
+        }
+        // A la salida de este método el ResultSet estará cerrado
+    }
+
+    @Override
+    public int count()
+    {
+        fetchToTheEndIfNotClosed();
+        return count;
+    }    
+    
+    @Override
     public void close()
     {
         if (closed) return; // Nos ahorramos la llamada al close() por si acaso
@@ -78,6 +125,7 @@ public abstract class JEPLResultSetImpl implements JEPLResultSet
         }
     }
 
+    @Override
     public boolean isClosed()
     {
         if (closed) return true;
@@ -127,46 +175,55 @@ public abstract class JEPLResultSetImpl implements JEPLResultSet
         }
     }
 
+    @Override
     public String[] getUserDataNames()
     {
         return userData.getUserDataNames();
     }
 
+    @Override
     public boolean containsName(String name)
     {
         return userData.containsName(name);
     }
 
+    @Override
     public Object getUserData(String name)
     {
         return userData.getUserData(name);
     }
 
+    @Override
     public <T> T getUserData(String name, Class<T> returnType)
     {
         return userData.getUserData(name, returnType);
     }
 
+    @Override
     public Object setUserData(String name, Object value)
     {
         return userData.setUserData(name, value);
     }
 
+    @Override
     public Object removeUserData(String name)
     {
         return userData.removeUserData(name);
     }
 
+    @Override
     public <T> T removeUserData(String name, Class<T> returnType)
     {
         return userData.removeUserData(name, returnType);
     }
 
+    @Override
     public JEPLStatement getJEPLStatement()
     {
         return stmt;
     }
 
+    @Override
     public ResultSet getResultSet()
     {
         return result;

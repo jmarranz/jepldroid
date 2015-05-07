@@ -21,6 +21,8 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 import javax.sql.DataSource;
 
 /**
@@ -124,6 +126,11 @@ public class SimpleDataSource implements DataSource
     }
 
     public boolean isWrapperFor(Class<?> iface) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException
+    {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }

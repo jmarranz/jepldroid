@@ -13,23 +13,23 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-package jepl;
+
+package jepl.impl.query;
+
+import jepl.impl.JEPLDAOImpl;
 
 /**
- * If an implementation of this interface is correctly registered, is used to setup
- * the JDBC Connection before processing SQL statements.
  *
- * @param <T> the expected type.  
  * @author jmarranz
+ * @param <T>
  */
-public interface JEPLConnectionListener<T> extends JEPLListener
-{
-    /**
-     * This method is called before processing SQL statements to configure the JDBC Connection.
-     *
-     * @param jcon the connection wrapper.
-     * @param task represents the consecutive task to be executed.
-     * @throws Exception
-     */
-    public void setupJEPLConnection(JEPLConnection jcon,JEPLTask<T> task) throws Exception;
+public class JEPLDAOQueryDefaultImpl<T> extends JEPLDAOQueryImpl<T>
+{   
+    public JEPLDAOQueryDefaultImpl(JEPLDAOImpl<T> dal,String sqlOriginal)
+    {
+        super(dal,sqlOriginal);
+        
+        parseSQL();        
+    }
+
 }

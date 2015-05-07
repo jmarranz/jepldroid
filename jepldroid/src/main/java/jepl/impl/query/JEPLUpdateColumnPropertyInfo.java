@@ -13,45 +13,27 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-package example.dao;
 
-import example.model.Person;
-import jepl.JEPLDataSource;
+package jepl.impl.query;
+
+import java.lang.reflect.Method;
+import jepl.JEPLColumnDesc;
 
 /**
  *
  * @author jmarranz
  */
-public class PersonDAOSelector extends ContactDAOSelectorBase
+public class JEPLUpdateColumnPropertyInfo
 {
-    protected PersonDAO personDAO;
-
-    public PersonDAOSelector(Person obj,JEPLDataSource ds)
+    public JEPLColumnDesc columnDesc = new JEPLColumnDesc();
+    public Method getter;
+    
+    public JEPLUpdateColumnPropertyInfo()
     {
-        super(obj);
-        this.personDAO = new PersonDAO(ds);
-    }
-
-    public Person getPerson()
-    {
-        return (Person)obj;
     }
     
-    @Override
-    public void insert()
+    public static String getColumnName(JEPLColumnDesc columnDesc)
     {
-        personDAO.insert(getPerson());
-    }
-
-    @Override
-    public void update()
-    {
-        personDAO.update(getPerson());
-    }
-
-    @Override
-    public boolean delete()
-    {
-        return personDAO.delete(getPerson());
+        return columnDesc.getName().toLowerCase();
     }
 }

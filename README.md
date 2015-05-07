@@ -17,9 +17,10 @@ JEPLDroid can works with any Android compatible JDBC driver but specifically it 
 News
 ------
 
-- 2015-04-12 JEPLDroid 1.2 is out (aligned to JEPLayer 1.2). First release uploaded to JCenter and Maven Central
+- 2015-10-25 Released v1.3 (aligned to JEPLayer 1.3)
+- 2015-04-10 Released v1.2 (aligned to JEPLayer 1.2). First release uploaded to JCenter and Maven Central
 - 2012-11-26 Source code now in GitHub
-- 2012-10-25 JEPLDroid 1.1 is out (first release, aligned to JEPLayer 1.1)
+- 2012-10-25 JEPLDroid 1.1 is out (release aligned to JEPLayer 1.1)
 
 
 Download Binaries and Docs

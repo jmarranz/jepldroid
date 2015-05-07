@@ -33,8 +33,9 @@ import jepl.impl.JEPLTaskOneExecutionImpl;
 /**
  *
  * @author jmarranz
+ * @param <T>
  */
-public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuery<T>
+public abstract class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuery<T>
 {
     public JEPLDAOQueryImpl(JEPLDAOImpl<T> dal,String sqlOriginal)
     {
@@ -110,7 +111,8 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
         return this;
     }
 
-    public JEPLResultSetDAOListener<T> getJEPLResultSetDAOListener()
+   
+    private JEPLResultSetDAOListener<T> getJEPLResultSetDAOListener()
     {
         // El retorno no puede ser nulo, necesitamos un listener para saber como
         // recoger los resultados
@@ -127,12 +129,12 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
         if (listener != null)
             return listener;
 
-        listener = getJEPLDataSourceImpl().getJEPLListenerList().getJEPLResultSetDAOListener();
-        if (listener == null) // Es necesario que haya uno
-            throw new JEPLException("Missing parameter implementing " + JEPLResultSetDAOListener.class + " or a listener registered on DAL/DAO or data source");
-        return listener;
+        //listener = getJEPLDataSourceImpl().getJEPLListenerList().getJEPLResultSetDAOListener();
+        //if (listener == null) // Es necesario que haya uno
+        throw new JEPLException("Missing listener implementing " + JEPLResultSetDAOListener.class + " registered on DAO");
     }
 
+    @Override
     public List<T> getResultList()
     {
         try
@@ -142,6 +144,7 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
             {
                 JEPLTaskOneExecWithConnectionImpl<List<T>> task = new JEPLTaskOneExecWithConnectionImpl<List<T>>()
                 {
+                    @Override
                     public List<T> execInherit() throws Exception
                     {
                         return getResultList(getJEPLConnection());
@@ -164,7 +167,7 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
         }
     }
 
-    public List<T> getResultList(final JEPLConnectionImpl conWrap) throws Exception
+    private List<T> getResultList(final JEPLConnectionImpl conWrap) throws Exception
     {
         final JEPLPreparedStatementImpl stmt = createJEPLPrepareStatement(conWrap);
         try
@@ -210,7 +213,7 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
         }
     }
 
-    public List<T> getResultList(JEPLResultSetImpl jrs,JEPLResultSetDAOListener<T> listener) throws Exception
+    private List<T> getResultList(JEPLResultSetImpl jrs,JEPLResultSetDAOListener<T> listener) throws Exception
     {
         List<T> objList = new LinkedList<T>();
         ResultSet rs = jrs.getResultSet();
@@ -233,6 +236,7 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
         return objList;
     }
 
+    @Override
     public T getSingleResult()
     {
         try
@@ -242,6 +246,7 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
             {
                 JEPLTaskOneExecWithConnectionImpl<T> task = new JEPLTaskOneExecWithConnectionImpl<T>()
                 {
+                    @Override
                     public T execInherit() throws Exception
                     {
                         return getSingleResult(getJEPLConnection());
@@ -264,7 +269,7 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
         }
     }
 
-    public T getSingleResult(final JEPLConnectionImpl conWrap) throws Exception
+    private T getSingleResult(final JEPLConnectionImpl conWrap) throws Exception
     {
         final JEPLPreparedStatementImpl stmt = createJEPLPrepareStatement(conWrap);
         try
@@ -309,7 +314,7 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
         }
     }
 
-    public T getSingleResult(JEPLResultSetImpl jrs,JEPLResultSetDAOListener<T> listener) throws Exception
+    private T getSingleResult(JEPLResultSetImpl jrs,JEPLResultSetDAOListener<T> listener) throws Exception
     {
         // A diferencia de JPA permitimos que no haya resultado (nulo), es MUCHO más práctico
         T obj = null;
@@ -333,6 +338,7 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
         return obj;
     }
 
+    @Override
     public JEPLResultSetDAO<T> getJEPLResultSetDAO()
     {
         JEPLConnectionImpl conWrap = getJEPLDataSourceImpl().getCurrentJEPLConnectionImpl();
@@ -363,7 +369,7 @@ public class JEPLDAOQueryImpl<T> extends JEPLDALQueryImpl implements JEPLDAOQuer
         }
     }
 
-    public JEPLResultSetDAO<T> getJEPLResultSetDAO(final JEPLConnectionImpl conWrap) throws Exception
+    private JEPLResultSetDAO<T> getJEPLResultSetDAO(final JEPLConnectionImpl conWrap) throws Exception
     {
         final JEPLPreparedStatementImpl stmt = createJEPLPrepareStatement(conWrap);
 

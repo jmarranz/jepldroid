@@ -77,7 +77,11 @@ public class TestDAOTreeInheritance
             try
             {
                 System.out.println("PROVIDER: " + dsFactory.getName());
-                execTest(dsFactory.getDataSource());
+                
+                DataSource ds = dsFactory.getDataSource();
+                CreateDBModel.createDB(ds);                
+                
+                execTest(ds);
             }
             finally
             {
@@ -88,8 +92,6 @@ public class TestDAOTreeInheritance
 
     public void execTest(DataSource ds)
     {
-        CreateDBModel.createDB(ds);
-
         JEPLBootNonJTA boot = JEPLBootRoot.get().createJEPLBootNonJTA();
         JEPLNonJTADataSource jds;
 

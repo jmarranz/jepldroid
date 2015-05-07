@@ -16,20 +16,13 @@
 package jepl;
 
 /**
- * If an implementation of this interface is correctly registered, is used to setup
- * the JDBC Connection before processing SQL statements.
+ * This enumeration is used to describe the type of persistent action going to be executed.
  *
- * @param <T> the expected type.  
+ * @see JEPLUpdateDAOListener#getColumnDescAndValues(JEPLConnection jcon,T obj,JEPLPersistAction action)
+ * @see JEPLUpdateDAOBeanMapper#getColumnFromBean(T obj,JEPLConnection jcon,String columnName,Method getter,JEPLPersistAction action)
  * @author jmarranz
  */
-public interface JEPLConnectionListener<T> extends JEPLListener
+public enum JEPLPersistAction
 {
-    /**
-     * This method is called before processing SQL statements to configure the JDBC Connection.
-     *
-     * @param jcon the connection wrapper.
-     * @param task represents the consecutive task to be executed.
-     * @throws Exception
-     */
-    public void setupJEPLConnection(JEPLConnection jcon,JEPLTask<T> task) throws Exception;
+    INSERT,UPDATE,DELETE;
 }

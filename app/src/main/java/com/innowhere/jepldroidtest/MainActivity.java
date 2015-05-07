@@ -156,8 +156,8 @@ public class MainActivity extends ActionBarActivity {
 
             DriverManager.registerDriver(new org.sqldroid.SQLDroidDriver());
 
-            Connection con;
-            con = DriverManager.getConnection(url,login,password);
+            Connection con = DriverManager.getConnection(url, login, password);
+
 
             Statement stmt;
             stmt = con.createStatement();
